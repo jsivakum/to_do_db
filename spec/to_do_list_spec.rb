@@ -1,7 +1,7 @@
 require('rspec')
 require('pg')
 require('pry')
-require('task')
+require('list')
 
 DB = PG.connect({:dbname => 'to_do_test'})
 
