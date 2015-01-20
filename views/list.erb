@@ -1,3 +1,7 @@
+A list of all your favorite tasks :D
+</small>
+</h1>
+
 <h1>Add a task to <%= @list.name() %> </h1>
 
 <form action="/tasks" method="post">
@@ -5,7 +9,10 @@
 
   <label for="description">Description of the task:</label>
   <input id="description" name="description" type="text">
-
+  <br>
+  <label for="due_date">When's it due?</label>
+  <input id="due_date" name="due_date" type="text">
+  <br>
   <button type="submit">Add task</button>
 </form>
 
@@ -14,7 +21,7 @@
 
 <ul>
   <% @list.tasks().each() do |task| %>
-  <li><%= task.description() %></li>
+  <li><%= task.description() %>&nbsp;|&nbsp;<%= task.due_date() %></li>
   <% end %>
 </ul>
 <% else %>
